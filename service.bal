@@ -18,7 +18,7 @@ service / on new http:Listener(9090) {
 
     resource function get teste() returns string|error {
 
-        http:Response albums = check albumClient->/teste;
+        http:Response albums = check albumClient->get("");
         io:println("GET request:" + albums.statusCode.toBalString());
         return "Hello, " + albums.statusCode.toBalString();
     }
