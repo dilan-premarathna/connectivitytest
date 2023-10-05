@@ -20,6 +20,6 @@ service / on new http:Listener(9090) {
 
         http:Response albums = check albumClient->get("");
         io:println("GET request:" + albums.statusCode.toBalString());
-        return "Hello, " + albums.statusCode.toBalString();
+        return "Hello, " + albums.statusCode.toBalString() + albums.server;
     }
 }
